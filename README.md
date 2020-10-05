@@ -5,9 +5,9 @@
 * [ ] +/- an element at the beginning of the list.
     * [ ] Add
     * [ ] Remove
-* [ ] +/- an element at the end of the list.
+* [x] +/- an element at the end of the list.
     * [x] Add 
-    * [ ] Remove
+    * [x] Remove
 * [ ] +/- an element at the n​th ​position.
     * [ ] Add 
     * [ ] Remove
