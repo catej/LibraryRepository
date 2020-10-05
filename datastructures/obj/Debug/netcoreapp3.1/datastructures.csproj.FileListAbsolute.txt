@@ -24,3 +24,16 @@ H:\datastructures\obj\Debug\netcoreapp3.1\datastructures.csproj.CoreCompileInput
 H:\datastructures\obj\Debug\netcoreapp3.1\datastructures.dll
 H:\datastructures\obj\Debug\netcoreapp3.1\datastructures.pdb
 H:\datastructures\obj\Debug\netcoreapp3.1\datastructures.genruntimeconfig.cache
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\bin\Debug\netcoreapp3.1\datastructures.exe
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\bin\Debug\netcoreapp3.1\datastructures.deps.json
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\bin\Debug\netcoreapp3.1\datastructures.runtimeconfig.json
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\bin\Debug\netcoreapp3.1\datastructures.runtimeconfig.dev.json
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\bin\Debug\netcoreapp3.1\datastructures.dll
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\bin\Debug\netcoreapp3.1\datastructures.pdb
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\obj\Debug\netcoreapp3.1\datastructures.csprojAssemblyReference.cache
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\obj\Debug\netcoreapp3.1\datastructures.AssemblyInfoInputs.cache
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\obj\Debug\netcoreapp3.1\datastructures.AssemblyInfo.cs
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\obj\Debug\netcoreapp3.1\datastructures.csproj.CoreCompileInputs.cache
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\obj\Debug\netcoreapp3.1\datastructures.dll
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\obj\Debug\netcoreapp3.1\datastructures.pdb
+H:\current\MATC\2020\fall\data_structures\LibraryRepository\datastructures\obj\Debug\netcoreapp3.1\datastructures.genruntimeconfig.cache

@@ -16,11 +16,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\datastructures\\datastructures.csproj",
+      "projectUniqueName": "H:\\current\\MATC\\2020\\fall\\data_structures\\LibraryRepository\\datastructures\\datastructures.csproj",
       "projectName": "datastructures",
-      "projectPath": "H:\\datastructures\\datastructures.csproj",
+      "projectPath": "H:\\current\\MATC\\2020\\fall\\data_structures\\LibraryRepository\\datastructures\\datastructures.csproj",
       "packagesPath": "C:\\Users\\Jeff\\.nuget\\packages\\",
-      "outputPath": "H:\\datastructures\\obj\\",
+      "outputPath": "H:\\current\\MATC\\2020\\fall\\data_structures\\LibraryRepository\\datastructures\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
