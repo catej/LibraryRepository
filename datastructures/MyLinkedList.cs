@@ -9,7 +9,7 @@ namespace DataStructuresApp
         public void Exe()
         {
             SeedList();
-            string prompt = "What would you like to do?";
+            string prompt = "What would you like to do? ";
             string menu = UI.DisplayMenu(methods, prompt);
             int methodChoice = UI.ValidateInteger(0, methods.Length, menu);
             while(!methodChoice.Equals(methods.Length))
@@ -42,7 +42,7 @@ namespace DataStructuresApp
         }
         private void DisplayList()
         {
-            if (this.head == null)
+            if (head == null)
             {
                 System.Console.WriteLine("The list is empty.");
             }
@@ -64,9 +64,9 @@ namespace DataStructuresApp
         private void AddNodeAtEnd(int data)
         {
             Node temp = new Node (data);
-            if (this.head == null)
+            if (head == null)
             {
-                this.head = temp;
+                head = temp;
             }
             else
             {
@@ -80,7 +80,28 @@ namespace DataStructuresApp
         }
         private void RemoveNodeAtEnd()
         {
-            throw new NotImplementedException();
+            DisplayList();
+            //find node before last: current.next.next == null
+            if (head == null)
+            {
+                System.Console.WriteLine("List is already empty.");
+            }
+            else if (head.Next == null)
+            {
+                head = null;
+            }
+            else
+            {
+                Node current = head;
+                while(current.Next.Next != null)
+                {
+                    current = current.Next;
+                }
+                //set current.next to null :or: last.
+                System.Console.WriteLine($"Node.Data: {current.Next.Data} successfully deleted.");
+                current.Next = null;
+                DisplayList();
+            }
         }
     }
 }

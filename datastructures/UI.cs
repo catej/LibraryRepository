@@ -40,7 +40,7 @@ namespace DataStructuresApp
             {
                 do
                 {
-                    Console.WriteLine(menuWithPrompt);
+                    Console.Write(menuWithPrompt);
                     choice = Convert.ToInt32(Console.ReadLine());
                     if (choice < min)
                     {
@@ -55,7 +55,7 @@ namespace DataStructuresApp
             catch
             {
                 System.Console.WriteLine("entered catch");
-                Console.Write($"\nPlease enter a number between {min} and {max}.");
+                Console.WriteLine($"\nPlease enter a number between {min} and {max}.");
                 return ValidateInteger(min, max, menuWithPrompt);
             }
             return choice;

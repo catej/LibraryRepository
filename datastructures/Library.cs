@@ -6,7 +6,6 @@ namespace DataStructuresApp
 {
     public class Library
     {
-        int min = 0;
         string[] dataStructures = { "Linked-List" };
         public void Start()
         {
@@ -14,6 +13,7 @@ namespace DataStructuresApp
             string menu = UI.DisplayMenu(dataStructures, prompt);
 
             // 1408: REMOVE HARD CODED CHOICE
+            // int min = 0;
             // int dataStructureChoice = UI.ValidateInteger(min, dataStructures.Length, menu);
             int dataStructureChoice = 0;
 
