@@ -5,7 +5,7 @@ namespace DataStructuresApp
     public class MyLinkedList
     {
         Node head;
-        string[] methods = { "Display List", "Add node at end", "Remove node at end" };
+        string[] methods = { "Display List", "Add node at end", "Remove node at end", "Add node at beginning" };
         public void Exe()
         {
             SeedList();
@@ -26,17 +26,22 @@ namespace DataStructuresApp
         }
         private void UseSelectedMethod(int methodChoice)
         {
+            int numberToAdd;
             switch (methodChoice)
             {
                 case 0:
                     DisplayList();
                     break;
                 case 1:
-                    int numberToAdd = UI.ValidateInteger();
+                    numberToAdd = UI.ValidateInteger();
                     AddNodeAtEnd(numberToAdd);
                     break;
                 case 2:
                     RemoveNodeAtEnd();
+                    break;
+                case 3:
+                    numberToAdd = UI.ValidateInteger();
+                    AddNodeAtBeginning(numberToAdd);
                     break;
             }
         }
@@ -44,7 +49,7 @@ namespace DataStructuresApp
         {
             if (head == null)
             {
-                System.Console.WriteLine("The list is empty.");
+                Console.WriteLine("The list is empty.");
             }
             else
             {
@@ -59,14 +64,19 @@ namespace DataStructuresApp
         }
         private void DisplayNode(Node node)
         {
-            System.Console.WriteLine($"Node.data: {node.Data}");
+            Console.WriteLine($"Node.Data: {node.Data}");
+        }
+        private void DisplayNodeAndNext(Node node)
+        {
+            Console.WriteLine($"Node.Data: {node.Data}");
+            Console.WriteLine($"Node.Data: {node.Next.Data}");
         }
         private void AddNodeAtEnd(int data)
         {
-            Node temp = new Node (data);
+            Node newNode = new Node (data);
             if (head == null)
             {
-                head = temp;
+                head = newNode;
             }
             else
             {
@@ -75,16 +85,14 @@ namespace DataStructuresApp
                 {
                     last = last.Next;
                 }
-                last.Next = temp;
+                last.Next = newNode;
             }
         }
         private void RemoveNodeAtEnd()
         {
-            DisplayList();
-            //find node before last: current.next.next == null
             if (head == null)
             {
-                System.Console.WriteLine("List is already empty.");
+                Console.WriteLine("List is already empty.");
             }
             else if (head.Next == null)
             {
@@ -97,11 +105,25 @@ namespace DataStructuresApp
                 {
                     current = current.Next;
                 }
-                //set current.next to null :or: last.
-                System.Console.WriteLine($"Node.Data: {current.Next.Data} successfully deleted.");
+                Console.WriteLine($"Node.Data: {current.Next.Data} successfully deleted.");
                 current.Next = null;
                 DisplayList();
             }
         }
+        private void AddNodeAtBeginning(int data)
+        {
+            Node newNode = new Node(data);
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node tempHead = head;
+                newNode.Next = tempHead;
+                head = newNode;
+            }
+        }
+
     }
 }

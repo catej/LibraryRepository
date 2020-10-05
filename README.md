@@ -1,13 +1,9 @@
 # LibraryRepository
 
-### Linked List
-* [x] Displaying the list
+### Linked List: To Do
 * [ ] +/- an element at the beginning of the list.
-    * [ ] Add
+    * [x] Add
     * [ ] Remove
-* [x] +/- an element at the end of the list.
-    * [x] Add 
-    * [x] Remove
 * [ ] +/- an element at the n​th ​position.
     * [ ] Add 
     * [ ] Remove
@@ -17,3 +13,9 @@
 * [ ] Insert Cycle
 * [ ] Detect Cycle
 * [ ] Remove Cycle
+
+### Completed Tasks
+* [x] Displaying the list
+* [x] +/- an element at the end of the list.
+    * [x] Add 
+    * [x] Remove
