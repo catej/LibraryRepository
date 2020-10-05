@@ -10,10 +10,15 @@ namespace DataStructuresApp
         string[] dataStructures = { "Linked-List" };
         public void Start()
         {
-            UI.DisplayMenu(dataStructures, "What would you like to work with?");
-            int dataStructureChoice = UI.GetInteger();
-            int validChoice = UI.ValidateInteger(min, dataStructures.Length, dataStructureChoice);
-            SelectDataStructure(validChoice);
+            string prompt = "What library would you like to use? ";
+            string menu = UI.DisplayMenu(dataStructures, prompt);
+
+            // 1408: REMOVE HARD CODED CHOICE
+            // int dataStructureChoice = UI.ValidateInteger(min, dataStructures.Length, menu);
+            int dataStructureChoice = 0;
+
+            SelectDataStructure(dataStructureChoice);
+            System.Console.Write("Exiting Library...");
         }
         private void SelectDataStructure(int num)
         {   
@@ -23,8 +28,8 @@ namespace DataStructuresApp
                     MyLinkedList structure = new MyLinkedList();
                     structure.Exe();
                     break;
-                case 1:
-                    System.Console.WriteLine("Exiting Library...\n");
+                default:
+                    System.Console.WriteLine("An error has occurred in Library/SelectDataStructure.cs");
                     break;
             }
         }

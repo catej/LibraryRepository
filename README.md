@@ -6,7 +6,7 @@
     * [ ] Add
     * [ ] Remove
 * [ ] +/- an element at the end of the list.
-    * [ ] Add 
+    * [x] Add 
     * [ ] Remove
 * [ ] +/- an element at the n​th ​position.
     * [ ] Add 

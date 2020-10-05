@@ -8,7 +8,7 @@ namespace DataStructuresApp
         {
             Library lib = new Library();
             lib.Start();
-            System.Console.Write("\nPress enter to exit...");
+            System.Console.Write("\nPress enter to exit program...");
             Console.ReadLine();
         }
     }
