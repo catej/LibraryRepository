@@ -255,18 +255,20 @@ namespace DataStructuresApp
                 previous.Next = currentNode.Next;
                 count--;
             }
-
         }
         private void ReverseList()
         {
-            try
+            Node previousNode = null;
+            Node currentNode = head;
+            Node next = null;
+            while(currentNode != null)
             {
-                throw new NotImplementedException();
+                next = currentNode.Next;
+                currentNode.Next = previousNode;
+                previousNode = currentNode;
+                currentNode = next;
             }
-            catch
-            {
-                System.Console.WriteLine("Method not implemented.");
-            }
+            head = previousNode;
         }
         private void BubbleSortData()
         {
@@ -323,6 +325,5 @@ namespace DataStructuresApp
                 System.Console.WriteLine("Method not implemented.");
             }
         }
-
     }
 }

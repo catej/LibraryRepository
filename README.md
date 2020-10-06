@@ -1,7 +1,6 @@
 # LibraryRepository
 
 ### Linked List: To Do
-* [ ] Reverse the List
 * [ ] Bubble Sort by exchanging data
 * [ ] Bubble Sort by exchanging links
 * [ ] Insert Cycle
@@ -19,3 +18,4 @@
 * [x] +/- an element at the n​th ​position.
     * [x] Add 
     * [x] Remove
+* [x] Reverse the List
