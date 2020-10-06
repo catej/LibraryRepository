@@ -5,7 +5,7 @@ namespace DataStructuresApp
     public class MyLinkedList
     {
         Node head;
-        string[] methods = { "Display List", "Add node at end", "Remove node at end", "Add node at beginning" };
+        string[] methods = { "Display List", "Add node at end", "Remove node at end", "Add node at beginning", "Remove node at beginning" }; // add to UseSelectedMethod() : switch
         public void Exe()
         {
             SeedList();
@@ -42,6 +42,9 @@ namespace DataStructuresApp
                 case 3:
                     numberToAdd = UI.ValidateInteger();
                     AddNodeAtBeginning(numberToAdd);
+                    break;
+                case 4:
+                    RemoveNodeAtBeginning();
                     break;
             }
         }
@@ -122,6 +125,17 @@ namespace DataStructuresApp
                 Node tempHead = head;
                 newNode.Next = tempHead;
                 head = newNode;
+            }
+        }
+        private void RemoveNodeAtBeginning()
+        {
+            if(head == null)
+            {
+                Console.WriteLine("List is empty.");
+            }
+            else
+            {
+                head = head.Next;
             }
         }
 
