@@ -1,9 +1,6 @@
 # LibraryRepository
 
 ### Linked List: To Do
-* [ ] +/- an element at the beginning of the list.
-    * [x] Add
-    * [ ] Remove
 * [ ] +/- an element at the n​th ​position.
     * [ ] Add 
     * [ ] Remove
@@ -18,4 +15,7 @@
 * [x] Displaying the list
 * [x] +/- an element at the end of the list.
     * [x] Add 
+    * [x] Remove
+* [x] +/- an element at the beginning of the list.
+    * [x] Add
     * [x] Remove
