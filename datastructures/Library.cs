@@ -9,6 +9,7 @@ namespace DataStructuresApp
         string[] dataStructures = { "Linked-List" };
         public void Start()
         {
+            Console.WriteLine("Welcome to the Library App.");
             string prompt = "What library would you like to use? ";
             string menu = UI.DisplayMenu(dataStructures, prompt);
 
@@ -27,6 +28,8 @@ namespace DataStructuresApp
                 case 0:
                     MyLinkedList structure = new MyLinkedList();
                     structure.Exe();
+                    break;
+                case 1:
                     break;
                 default:
                     System.Console.WriteLine("An error has occurred in Library/SelectDataStructure.cs");

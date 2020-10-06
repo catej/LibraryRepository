@@ -9,13 +9,12 @@ namespace DataStructuresApp
         public static Random rng = new Random();
         public static string DisplayMenu(string[] options, string prompt)
         {
-            string menu = "";
+            string menu = "\n" + prompt + "\n";
             for (int i = 0; i < options.Length; i++)
             {
                 menu += i + ") " + options[i] + "\n";
             }
-            menu += options.Length + ") Exit\n";
-            menu += prompt;
+            menu += options.Length + ") Exit\nEnter choice: ";
             return menu;
         }
         public static int ValidateInteger()
@@ -30,6 +29,28 @@ namespace DataStructuresApp
             {
                 Console.WriteLine($"Error: not an integer.");
                 return ValidateInteger();
+            }
+            return choice;
+        }
+        public static int ValidateInteger(int min, string prompt)
+        {
+            int choice = -1;
+            try
+            {
+                while(choice < min)
+                {
+                    Console.Write($"{prompt}: ");
+                    choice = Convert.ToInt32(Console.ReadLine());
+                    if (choice < min)
+                    {
+                        System.Console.WriteLine($"Error: {choice} is < {min}. Try again.");
+                    }
+                }
+            }
+            catch
+            {
+                Console.WriteLine($"\nInvalid integer. Please try again.");
+                return ValidateInteger(min, prompt);
             }
             return choice;
         }
