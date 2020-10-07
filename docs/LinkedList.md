@@ -1,4 +1,4 @@
-#  (Linked List)[https://github.com/catej/LibraryRepository/tree/main/datastructures/LinkedList]
+# [Linked List](https://github.com/catej/LibraryRepository/tree/main/datastructures/LinkedList)
 
 ### To Do:
 
