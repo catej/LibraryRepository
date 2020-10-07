@@ -43,7 +43,7 @@ namespace DataStructuresApp
                     choice = Convert.ToInt32(Console.ReadLine());
                     if (choice < min)
                     {
-                        System.Console.WriteLine($"Error: {choice} is < {min}. Try again.");
+                        Console.WriteLine($"Error: {choice} is < {min}. Try again.");
                     }
                 }
             }

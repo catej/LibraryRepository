@@ -1,9 +1,6 @@
 # LibraryRepository
 
 ### Linked List: To Do
-* [ ] Insert Cycle
-* [ ] Detect Cycle
-* [ ] Remove Cycle
 
 ### Completed Tasks
 * [x] Displaying the list
@@ -19,3 +16,6 @@
 * [x] Reverse the List
 * [x] Bubble Sort by exchanging data
 * [x] Bubble Sort by exchanging links
+* [x] Insert Cycle
+* [x] Detect Cycle
+* [x] Remove Cycle

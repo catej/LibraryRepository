@@ -22,13 +22,13 @@ namespace DataStructuresApp
         private void SeedList()
         {
             // AddNodeAtEnd(UI.rng.Next(100));
-            AddNodeAtEnd(10);
             AddNodeAtEnd(1);
-            AddNodeAtEnd(4);
-            AddNodeAtEnd(5);
-            AddNodeAtEnd(3);
             AddNodeAtEnd(2);
+            AddNodeAtEnd(10);
+            AddNodeAtEnd(3);
             AddNodeAtEnd(7);
+            AddNodeAtEnd(5);
+            AddNodeAtEnd(4);
             AddNodeAtEnd(6);
             AddNodeAtEnd(8);
             AddNodeAtEnd(9);
@@ -82,8 +82,17 @@ namespace DataStructuresApp
                 case 9: 
                     BubbleSortLinks();
                     break;
-                case 10: 
-                    InsertCycle();
+                case 10:
+                    if(count > 1)
+                    {
+                        string prompt = $"Please enter a number (0 - {count - 2}): ";
+                        position = UI.ValidateInteger(0, count - 2, prompt);
+                        InsertCycle(position);
+                    }
+                    else
+                    {
+                        Console.WriteLine("List Only contains 1 element");
+                    }
                     break;
                 case 11: 
                     DetectCycle();
@@ -102,11 +111,10 @@ namespace DataStructuresApp
             else
             {
                 Node current = head;
-                DisplayNode(current);
-                while(current.Next != null)
+                for (int i = 0; i < count; i++)
                 {
-                    current = current.Next;
                     DisplayNode(current);
+                    current = current.Next;
                 }
             }
             Console.WriteLine($"Count: {count}");
@@ -130,7 +138,7 @@ namespace DataStructuresApp
             else
             {
                 Node last = head;
-                while (last.Next != null)
+                while(last.Next != null)
                 {
                     last = last.Next;
                 }
@@ -338,37 +346,96 @@ namespace DataStructuresApp
                 }
             }
         }
-        private void InsertCycle()
+        private void InsertCycle(int cycleTarget)
         {
-            try
+            if (cycleTarget == 0 && count == 2)
             {
-                throw new NotImplementedException();
+                if (DetectCycle() == false)
+                {
+                    head.Next.Next = head;
+                }
+                else
+                {
+                    Console.WriteLine("Cycle already exists.");
+                }
             }
-            catch
+            else
             {
-                System.Console.WriteLine("Method not implemented.");
+
+                Node current = head;
+                Node targetNode = null;
+                for(int i = 0; i < count - 1; i++)
+                {
+                    if (i == cycleTarget)
+                    {
+                        targetNode = current;
+                    }
+                    current = current.Next;
+                }
+                DisplayNode(targetNode);
+                DisplayNode(current);
+                current.Next = targetNode;
             }
         }
-        private void DetectCycle()
+        private bool DetectCycle()
         {
-            try
+            int? cycleStart = FindCycle();
+            if (cycleStart == null)
             {
-                throw new NotImplementedException();
+                Console.WriteLine("No cycle detected.");
+                return false;
             }
-            catch
+            else
             {
-                System.Console.WriteLine("Method not implemented.");
+                Console.WriteLine($"Cycle detected at position: {cycleStart}.");
+                return true;
+            }
+        }
+        private int? FindCycle()
+        {
+            if (head == null || head.Next == null) 
+            { 
+                return null; 
+            }
+            Node current = head;
+            Node counterNode = head;
+            int position = 0;
+            for(int i = 0; i < count - 1; i++)
+            {
+                current = current.Next;
+            }
+
+            if (current.Next == null)
+            {
+                Console.WriteLine("No Cycle");
+                return null;
+            }
+            else
+            {
+                while (counterNode != current.Next)
+                {
+                    position++;
+                    counterNode = counterNode.Next;
+                }
+                return position;
             }
         }
         private void RemoveCycle()
         {
-            try
+            // throw new NotImplementedException();
+
+            if (FindCycle() == null)
             {
-                throw new NotImplementedException();
+                Console.WriteLine("No cycle detected.");
             }
-            catch
+            else
             {
-                System.Console.WriteLine("Method not implemented.");
+                Node current = head;
+                for(int i = 0; i < count - 1; i++)
+                {
+                    current = current.Next;
+                }
+                current.Next = null;
             }
         }
     }
