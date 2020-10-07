@@ -22,16 +22,16 @@ namespace DataStructuresApp
         private void SeedList()
         {
             // AddNodeAtEnd(UI.rng.Next(100));
+            AddNodeAtEnd(10);
             AddNodeAtEnd(1);
-            AddNodeAtEnd(2);
-            AddNodeAtEnd(3);
             AddNodeAtEnd(4);
             AddNodeAtEnd(5);
-            AddNodeAtEnd(6);
+            AddNodeAtEnd(3);
+            AddNodeAtEnd(2);
             AddNodeAtEnd(7);
+            AddNodeAtEnd(6);
             AddNodeAtEnd(8);
             AddNodeAtEnd(9);
-            AddNodeAtEnd(10);
         }
         private void UseSelectedMethod(int methodChoice)
         {
@@ -272,24 +272,70 @@ namespace DataStructuresApp
         }
         private void BubbleSortData()
         {
-            try
+            if (head == null)
             {
-                throw new NotImplementedException();
+                return;
             }
-            catch
+            else if (head.Next == null)
             {
-                System.Console.WriteLine("Method not implemented.");
+                return;
+            }
+            else
+            {
+                Node endNode;
+                Node currentNode;
+                Node nextNode;
+                for(endNode = null; endNode != head.Next; endNode = currentNode)
+                {
+                    for (currentNode = head; currentNode.Next != endNode; currentNode = currentNode.Next)
+                    {
+                        nextNode = currentNode.Next;
+                        if (currentNode.Data > nextNode.Data)
+                        {
+                            int temp = currentNode.Data;
+                            currentNode.Data = nextNode.Data;
+                            nextNode.Data = temp;
+                        }
+                    }
+                }
             }
         }
         private void BubbleSortLinks()
         {
-            try
+            if (head == null)
             {
-                throw new NotImplementedException();
+                return;
             }
-            catch
+            else if (head.Next == null)
             {
-                System.Console.WriteLine("Method not implemented.");
+                return;
+            }
+            else
+            {
+                Node endNode, currentNode, previousNode, nextNode, temp;
+                for(endNode = null; endNode != head.Next; endNode = currentNode)
+                {
+                    for (previousNode = currentNode = head; currentNode.Next != endNode; previousNode = currentNode, currentNode = currentNode.Next)
+                    {
+                        nextNode = currentNode.Next;
+                        if (currentNode.Data > nextNode.Data)
+                        {
+                            currentNode.Next = nextNode.Next;
+                            nextNode.Next = currentNode;
+                            if (currentNode != head)
+                            {
+                                previousNode.Next = nextNode;
+                            }
+                            else
+                            {
+                                head = nextNode;
+                            }
+                            temp = currentNode;
+                            currentNode = nextNode;
+                            nextNode = temp;
+                        }
+                    }
+                }
             }
         }
         private void InsertCycle()

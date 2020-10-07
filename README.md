@@ -1,8 +1,6 @@
 # LibraryRepository
 
 ### Linked List: To Do
-* [ ] Bubble Sort by exchanging data
-* [ ] Bubble Sort by exchanging links
 * [ ] Insert Cycle
 * [ ] Detect Cycle
 * [ ] Remove Cycle
@@ -19,3 +17,5 @@
     * [x] Add 
     * [x] Remove
 * [x] Reverse the List
+* [x] Bubble Sort by exchanging data
+* [x] Bubble Sort by exchanging links
