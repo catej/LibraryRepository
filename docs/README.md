@@ -1,5 +1,5 @@
 # Docs
-This folder contains a folder [requirements](https://github.com/catej/LibraryRepository/tree/main/docs/requirements) containing project requirements and a .md file detailing each project.
+This folder contains documentation for each data structure.
 
 ### Projects: 
-* [Linked List](https://github.com/catej/LibraryRepository/tree/main/datastructures/LinkedList)
+* [Linked List](https://github.com/catej/LibraryRepository/tree/main/datastructures/LinkedList) - [docs](https://github.com/catej/LibraryRepository/blob/main/docs/LinkedList.md)
