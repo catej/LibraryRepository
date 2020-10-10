@@ -1,25 +1,26 @@
 using System;
+using datastructures.structures;
 
 namespace DataStructuresApp
 {
-    public class MyLinkedList
+    public class MyLinkedList : MyDefaultStructure
     {
-        Node head;
-        int count;
+        
         string[] methods = { "Display List", "Add node at end", "Remove node at end", "Add node at beginning", "Remove node at beginning", "Add at Nth", "Remove at Nth", "Reverse List", "Bubble sort | Exchange data", "Bubble Sort | Exchange links", "Insert Cycle", "Detect cycle", "Remove Cycle" }; // add to UseSelectedMethod() : switch
-        public void Exe()
-        {
-            SeedList();
-            string prompt = "You are using a: Linked List.\n\nWhat would you like to do? ";
-            string menu = UI.DisplayMenu(methods, prompt);
-            int methodChoice = UI.ValidateInteger(0, methods.Length, menu);
-            while(!methodChoice.Equals(methods.Length))
-            {
-                UseSelectedMethod(methodChoice);
-                methodChoice = UI.ValidateInteger(0, methods.Length, menu);
-            }
-        }
-        private void SeedList()
+
+        // public void Exe()
+        // {
+        //     SeedList();
+        //     string prompt = "You are using a: Linked List.\n\nWhat would you like to do? ";
+        //     string menu = UI.DisplayMenu(methods, prompt);
+        //     int methodChoice = UI.ValidateInteger(0, methods.Length, menu);
+        //     while(!methodChoice.Equals(methods.Length))
+        //     {
+        //         UseSelectedMethod(methodChoice);
+        //         methodChoice = UI.ValidateInteger(0, methods.Length, menu);
+        //     }
+        // }
+        public override void SeedData()
         {
             // AddNodeAtEnd(UI.rng.Next(100));
             AddNodeAtEnd(1);
@@ -33,7 +34,7 @@ namespace DataStructuresApp
             AddNodeAtEnd(8);
             AddNodeAtEnd(9);
         }
-        private void UseSelectedMethod(int methodChoice)
+        public override void UseSelectedMethod(int methodChoice)
         {
             int numberToAdd;
             int position;
@@ -438,5 +439,6 @@ namespace DataStructuresApp
                 current.Next = null;
             }
         }
+
     }
 }
