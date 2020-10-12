@@ -4,6 +4,7 @@
    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
 "version": "0.2.0",
 "configurations": [
+
     {
         "name": ".NET Core Launch (console)",
         "type": "coreclr",
@@ -14,8 +15,9 @@
         "args": [],
         "cwd": "${workspaceFolder}/datastructures",
         // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
-        "console": "internalConsole",
-        "stopAtEntry": false
+        "console": "externalTerminal",
+        "stopAtEntry": false,
+        "justMyCode": false,
     },
     {
         "name": ".NET Core Attach",

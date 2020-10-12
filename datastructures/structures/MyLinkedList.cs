@@ -5,24 +5,14 @@ namespace DataStructuresApp
 {
     public class MyLinkedList : MyDefaultStructure
     {
-        
-        string[] methods = { "Display List", "Add node at end", "Remove node at end", "Add node at beginning", "Remove node at beginning", "Add at Nth", "Remove at Nth", "Reverse List", "Bubble sort | Exchange data", "Bubble Sort | Exchange links", "Insert Cycle", "Detect cycle", "Remove Cycle" }; // add to UseSelectedMethod() : switch
-
-        // public void Exe()
-        // {
-        //     SeedList();
-        //     string prompt = "You are using a: Linked List.\n\nWhat would you like to do? ";
-        //     string menu = UI.DisplayMenu(methods, prompt);
-        //     int methodChoice = UI.ValidateInteger(0, methods.Length, menu);
-        //     while(!methodChoice.Equals(methods.Length))
-        //     {
-        //         UseSelectedMethod(methodChoice);
-        //         methodChoice = UI.ValidateInteger(0, methods.Length, menu);
-        //     }
-        // }
+        public MyLinkedList()
+        {
+            this.structureName = "Linked-List";
+            this.methods = new string[] { "Display List", "Add node at end", "Remove node at end", "Add node at beginning", "Remove node at beginning", "Add at Nth", "Remove at Nth", "Reverse List", "Bubble sort | Exchange data", "Bubble Sort | Exchange links", "Insert Cycle", "Detect cycle", "Remove Cycle" }; // add to UseSelectedMethod() : switch
+            SeedData();
+        }
         public override void SeedData()
         {
-            // AddNodeAtEnd(UI.rng.Next(100));
             AddNodeAtEnd(1);
             AddNodeAtEnd(2);
             AddNodeAtEnd(10);
@@ -119,82 +109,6 @@ namespace DataStructuresApp
                 }
             }
             Console.WriteLine($"Count: {count}");
-        }
-        private void DisplayNode(Node node)
-        {
-            Console.WriteLine($"Node.Data: {node.Data}");
-        }
-        private void DisplayNodeAndNext(Node node)
-        {
-            Console.WriteLine($"Node.Data: {node.Data}");
-            Console.WriteLine($"Node.Data: {node.Next.Data}");
-        }
-        private void AddNodeAtEnd(int data)
-        {
-            Node newNode = new Node (data);
-            if (head == null)
-            {
-                head = newNode;
-            }
-            else
-            {
-                Node last = head;
-                while(last.Next != null)
-                {
-                    last = last.Next;
-                }
-                last.Next = newNode;
-            }
-            count++;
-        }
-        private void RemoveNodeAtEnd()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("List is already empty.");
-            }
-            else if (head.Next == null)
-            {
-                head = null;
-                count--;
-            }
-            else
-            {
-                Node current = head;
-                while(current.Next.Next != null)
-                {
-                    current = current.Next;
-                }
-                current.Next = null;
-                count --;
-            }
-        }
-        private void AddNodeAtBeginning(int data)
-        {
-            Node newNode = new Node(data);
-            if (head == null)
-            {
-                head = newNode;
-            }
-            else
-            {
-                Node tempHead = head;
-                newNode.Next = tempHead;
-                head = newNode;
-            }
-            count++;
-        }
-        private void RemoveNodeAtBeginning()
-        {
-            if(head == null)
-            {
-                Console.WriteLine("List is empty.");
-            }
-            else
-            {
-                head = head.Next;
-                count--;
-            }
         }
         private void AddNodeAtNth(int position, int data)
         {

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using datastructures;
+using datastructures.structures;
 
 namespace DataStructuresApp
 {
     public class Library
     {
+        int min = 0;
         string[] dataStructures = { "Linked-List", "Stack", "Queue" };
         public void Start()
         {
@@ -14,33 +16,33 @@ namespace DataStructuresApp
             string prompt = "What library would you like to use? ";
             string menu = UI.DisplayMenu(dataStructures, prompt);
 
-            int dataStructureChoice = 1;
-            while(dataStructureChoice != dataStructures.Length)
+            int dataStructureChoice;
+            do
             {
                 // 1408: REMOVE HARD CODED CHOICE
-                // int min = 0;
-                // int dataStructureChoice = UI.ValidateInteger(min, dataStructures.Length, menu);
-                dataStructureChoice = 1;
+                dataStructureChoice = UI.ValidateInteger(min, dataStructures.Length, menu);
+                // dataStructureChoice = 1;
                 SelectDataStructure(dataStructureChoice);
-            }
+
+            }while(dataStructureChoice != dataStructures.Length);
 
         }
         private void SelectDataStructure(int num)
         {   
+            MyDefaultStructure structure;
             switch (num)
             {
-                
                 case 0:
-                    MyLinkedList linkedList = new MyLinkedList();
-                    linkedList.Exe();
+                    structure = new MyLinkedList();
+                    structure.Exe();
                     break;
                 case 1:
-                    MyStack myStack = new MyStack();
-                    myStack.Exe();
+                    structure = new MyStack();
+                    structure.Exe();
                     break;
                 case 2:
-                    MyQueue myQueue = new MyQueue();
-                    myQueue.Exe();
+                    structure = new MyQueue();
+                    structure.Exe();
                     break;
                 case 3:
                     Console.Write("Exiting Library...");

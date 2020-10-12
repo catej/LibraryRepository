@@ -1,4 +1,4 @@
-# [Linked List](https://github.com/catej/LibraryRepository/tree/main/datastructures/LinkedList) - [docs](https://github.com/catej/LibraryRepository/blob/main/docs/LinkedList.md)
+# [Linked List](https://github.com/catej/LibraryRepository/tree/main/datastructures/LinkedList) - [Requirements](https://github.com/catej/LibraryRepository/blob/main/docs/Assignment-3-link-list.pdf)
 
 ### To Do:
 
