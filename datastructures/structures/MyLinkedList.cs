@@ -93,23 +93,6 @@ namespace DataStructuresApp
                     break;
             }
         }
-        private void DisplayList()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("The list is empty.");
-            }
-            else
-            {
-                Node current = head;
-                for (int i = 0; i < count; i++)
-                {
-                    DisplayNode(current);
-                    current = current.Next;
-                }
-            }
-            Console.WriteLine($"Count: {count}");
-        }
         private void AddNodeAtNth(int position, int data)
         {
             Node currentNode;

@@ -18,16 +18,33 @@ namespace datastructures.structures
             do
             {
                 methodChoice = UI.ValidateInteger(0, methods.Length, menu);
-                UseSelectedMethod(methodChoice);
+                UseSelectedMethod(methodChoice);                
             }while(!methodChoice.Equals(methods.Length));
         }
         public abstract void SeedData();
         public abstract void UseSelectedMethod(int methodChoice);
-        public void DisplayNode(Node node)
+        protected void DisplayList()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("The list is empty.");
+            }
+            else
+            {
+                Node current = head;
+                for (int i = 0; i < count; i++)
+                {
+                    DisplayNode(current);
+                    current = current.Next;
+                }
+            }
+            Console.WriteLine($"Count: {count}");
+        }
+        protected void DisplayNode(Node node)
         {
             Console.WriteLine($"Node.Data: {node.Data}");
         }
-        public void DisplayNodeAndNext(Node node)
+        protected void DisplayNodeAndNext(Node node)
         {
             Console.WriteLine($"Node.Data: {node.Data}");
             Console.WriteLine($"Node.Data: {node.Next.Data}");

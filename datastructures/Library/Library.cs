@@ -12,6 +12,7 @@ namespace DataStructuresApp
         string[] dataStructures = { "Linked-List", "Stack", "Queue" };
         public void Start()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to the Library App.");
             string prompt = "What library would you like to use? ";
             string menu = UI.DisplayMenu(dataStructures, prompt);
