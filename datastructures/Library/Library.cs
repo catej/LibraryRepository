@@ -9,7 +9,7 @@ namespace DataStructuresApp
     public class Library
     {
         int min = 0;
-        string[] dataStructures = { "Linked-List", "Stack", "Queue" };
+        string[] dataStructures = { "Linked-List", "Stack", "Queue", "Misc_Methods" };
         public void Start()
         {
             Console.Clear();
@@ -46,6 +46,10 @@ namespace DataStructuresApp
                     structure.Exe();
                     break;
                 case 3:
+                    MiscMethods misc = new MiscMethods();
+                    misc.Exe();
+                    break;
+                case 4:
                     Console.Write("Exiting Library...");
                     break;
             }
