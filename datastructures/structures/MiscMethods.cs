@@ -65,7 +65,7 @@ namespace datastructures.structures
         {
             long binary = Convert.ToInt64(Convert.ToString(n, 2));
             long oct = Convert.ToInt64(Convert.ToString(n, 8));
-            long hex = Convert.ToInt64(Convert.ToString(n, 16));
+            string hex = Convert.ToString(n, 16);
 
             System.Console.WriteLine($"Your Number: {n}");
             System.Console.WriteLine($"Your Number in binary is: {binary}");
