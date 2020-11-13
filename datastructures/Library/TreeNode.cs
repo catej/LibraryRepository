@@ -6,7 +6,7 @@ namespace datastructures.structures
         TreeNode leftSub;
         TreeNode rightSub;
 
-        public DefaultTree(int data)
+        public TreeNode(int data)
         {
             this.data = data;
             leftSub = null;
