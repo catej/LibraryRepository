@@ -4,12 +4,13 @@ using System.Text;
 using datastructures;
 using datastructures.structures;
 
+
 namespace DataStructuresApp
 {
     public class Library
     {
         int min = 0;
-        string[] dataStructures = { "Linked-List", "Stack", "Queue", "Misc_Methods" };
+        string[] dataStructures = { "Linked-List", "Stack", "Queue", "Misc Methods", "Binary Search Tree" };
         public void Start()
         {
             Console.Clear();
@@ -20,11 +21,8 @@ namespace DataStructuresApp
             int dataStructureChoice;
             do
             {
-                // 1408: REMOVE HARD CODED CHOICE
                 dataStructureChoice = UI.ValidateInteger(min, dataStructures.Length, menu);
-                // dataStructureChoice = 1;
                 SelectDataStructure(dataStructureChoice);
-
             }while(dataStructureChoice != dataStructures.Length);
 
         }
@@ -50,6 +48,10 @@ namespace DataStructuresApp
                     misc.Exe();
                     break;
                 case 4:
+                    MyBinarySearchTree tree = new MyBinarySearchTree();
+                    tree.Exe();
+                    break;
+                case 5:
                     Console.Write("Exiting Library...");
                     break;
             }

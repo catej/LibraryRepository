@@ -2,10 +2,11 @@ namespace datastructures.structures
 {
     public class TreeNode
     {
-        int data;
-        TreeNode leftSub;
-        TreeNode rightSub;
+        public int data;
+        public TreeNode leftSub;
+        public TreeNode rightSub;
 
+        public TreeNode(){}
         public TreeNode(int data)
         {
             this.data = data;
