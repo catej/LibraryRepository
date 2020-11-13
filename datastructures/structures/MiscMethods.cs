@@ -5,7 +5,7 @@ namespace datastructures.structures
 {
     public class MiscMethods
     {
-        public string[] methods = new string[] { "Find Factorial", "Print Binary Octal Hexadecimal" , "Print Fibonacci", "Tower of Hanoi"};
+        public string[] methods = new string[] { "Find Factorial", "Print Binary Octal Hexadecimal" , "Print Greatest Common Divisor", "Print Fibonacci", "Tower of Hanoi"};
         public void Exe()
         {
             string prompt = "What would you like to do? ";
@@ -31,15 +31,18 @@ namespace datastructures.structures
                     PrintBinaryOctalHexadecimal(numberToUse);
                     break;
                 case 2:
-                    numberToUse = UI.ValidateInteger();
-                    PrintFibonacci(numberToUse);
+                    PrintGreatestCommonDivisor();
                     break;
                 case 3:
                     numberToUse = UI.ValidateInteger();
-                    TowerOfHanoi(numberToUse);
+                    PrintFibonacci(numberToUse);
                     break;
                 case 4:
-                    System.Console.WriteLine("Exiting MiscMethods()...");
+                    numberToUse = UI.ValidateInteger();
+                    TowerOfHanoi(numberToUse);
+                    break;
+                case 5:
+                    System.Console.WriteLine("Exiting MiscMethods...");
                     break;
             }
         }
@@ -72,7 +75,26 @@ namespace datastructures.structures
             System.Console.WriteLine($"Your Number in ocatal is: {oct}");
             System.Console.WriteLine($"Your Number in hexidecimal is: {hex}");
         }
-
+        private void PrintGreatestCommonDivisor()
+        {
+            System.Console.WriteLine("First Nubmer");
+            int firstNumber = UI.ValidateInteger();
+            System.Console.WriteLine("Second Number");
+            int secondNumber = UI.ValidateInteger();
+            int GCD = FindGCD(firstNumber, secondNumber);
+            System.Console.WriteLine($"GCD of {firstNumber} and {secondNumber} is {GCD}.");
+        }
+        private int FindGCD(int firstNumber, int secondNumber)
+        {
+            if (secondNumber == 0)
+            {
+                return firstNumber;
+            }
+            else
+            {
+                return FindGCD(secondNumber, firstNumber % secondNumber);
+            }
+        }
         public void PrintFibonacci(int n)
         {
             // System.Console.Write(n);
@@ -96,7 +118,18 @@ namespace datastructures.structures
 
         private void TowerOfHanoi(int n)
         {
-            throw new NotImplementedException();
+            Hanoi(n, 'A', 'B','C');
+        }
+        private void Hanoi(int n, char source, char temp, char destination)
+        {
+            if (n == 1)
+            {
+                Console.WriteLine($"Move Disk {n} from {source} --> {destination}" );
+                return;
+            }
+            Hanoi(n-1, source, destination, temp);
+            Console.WriteLine($"Move Disk {n} from {source} --> {destination}" );
+            Hanoi(n-1, temp, source, destination);
         }
     }
 }
