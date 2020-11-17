@@ -10,7 +10,7 @@ namespace DataStructuresApp
     public class Library
     {
         int min = 0;
-        string[] dataStructures = { "Linked-List", "Stack", "Queue", "Misc Methods", "Binary Search Tree" };
+        string[] dataStructures = { "Linked-List", "Stack", "Queue", "Misc Methods", "Binary Search Tree", "Sorting Methods" };
         public void Start()
         {
             Console.Clear();
@@ -52,6 +52,10 @@ namespace DataStructuresApp
                     tree.Exe();
                     break;
                 case 5:
+                    MySortingMethods sortingMethods = new MySortingMethods();
+                    sortingMethods.Exe();
+                    break;
+                case 6:
                     Console.Write("Exiting Library...");
                     break;
             }
